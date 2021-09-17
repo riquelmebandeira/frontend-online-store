@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-class ProductList extends Component {
+// alteração do nome do componente
+class Home extends Component {
   render() {
     return (
       <div>
@@ -12,4 +13,4 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+export default Home;
