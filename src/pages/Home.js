@@ -9,7 +9,7 @@ class Home extends Component {
         </p>
       </div>
     );
-  }s
+  }
 }
 
 export default Home;
