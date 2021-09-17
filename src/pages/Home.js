@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import CategoriesList from '../components/CategoriesList';
 import { getCategories } from '../services/api';
 
@@ -22,7 +23,7 @@ class Home extends Component {
       <div>
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
-        </p>
+        <CartButton />
         <aside>
           { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
         </aside>
