@@ -9,8 +9,8 @@ class CategoriesList extends React.Component {
         {
           categories.map(({ id, name }) => (
             <label htmlFor={ id } key={ id } data-testid="category">
-              { name }
               <input type="radio" id={ id } />
+              { name }
             </label>
           ))
         }
