@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CartButton from '../components/CartButton';
 import CategoriesList from '../components/CategoriesList';
 import { getCategories } from '../services/api';
 
@@ -23,10 +23,13 @@ class Home extends Component {
       <div>
         <p data-testid="home-initial-message">
           Digite algum termo de pesquisa ou escolha uma categoria.
-        <CartButton />
+        </p>
         <aside>
+          <ul>
           { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
+          </ul>
         </aside>
+        <CartButton />
       </div>
     );
   }
