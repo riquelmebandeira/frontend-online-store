@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+// alteração do nome do componente
 class Home extends Component {
   render() {
     return (
