@@ -11,3 +11,7 @@ aside {
 article {
   border: solid 1px black;
 }
+
+.top-bar {
+  display: flex;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CartButton from '../components/CartButton';
+import ProductCard from '../components/ProductCard';
 import CategoriesList from '../components/CategoriesList';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 import Search from '../components/Search';
@@ -12,6 +13,7 @@ class Home extends Component {
       storedCategories: undefined,
       query: '',
       categoryId: '',
+      searchResult: undefined,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -26,21 +28,20 @@ class Home extends Component {
   }
 
   async handleClick() {
-    console.log('clique');
     const { query, categoryId } = this.state;
     const products = await getProductsFromCategoryAndQuery(categoryId, query);
-    console.log(products);
+    this.setState({ searchResult: products.results });
   }
 
   render() {
-    const { storedCategories, query } = this.state;
+    const { storedCategories, query, searchResult } = this.state;
     return (
       <main>
         <aside>
           { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
         </aside>
         <article>
-          <section>
+          <section className="top-bar">
             <Search
               handleClick={ this.handleClick }
               handleChange={ this.handleChange }
@@ -51,7 +52,9 @@ class Home extends Component {
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
-          <section>chama função que renderiza produtos pesquisados</section>
+          <section>
+            { searchResult ? <ProductCard product={ searchResult } /> : null }
+          </section>
         </article>
       </main>
     );
