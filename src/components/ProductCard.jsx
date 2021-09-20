@@ -8,7 +8,7 @@ class ProductCard extends React.Component {
 
     return (
       <>
-        { albums.map(({
+        { product.map(({
           id,
           title,
           price,

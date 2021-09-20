@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  margin: 10px;
+}
+
+aside {
+  border: solid 1px black;
+  width: 300px;
+}
+
+article {
+  border: solid 1px black;
+}
+
+.top-bar {
+  display: flex;
+}
