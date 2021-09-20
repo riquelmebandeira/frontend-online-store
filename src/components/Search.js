@@ -1,19 +1,23 @@
-import React, { Components } from 'react';
-imp
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Search extends Components {
+class Search extends React.Component {
   render() {
-    const { onClick, onChange } = this.props;
+    const { handleClick, handleChange, query } = this.props;
     return (
       <div>
         <input
-          onChange={ onChange }
+          onChange={ handleChange }
           type="text"
           data-testid="query-input"
+          name="query"
+          value={ query }
+          placeholder="Digite sua busca"
         />
         <button
+          type="button"
           data-testid="query-button"
-          onClick={ onClick }
+          onClick={ handleClick }
         >
           Pesquisar
         </button>
@@ -21,5 +25,11 @@ class Search extends Components {
     );
   }
 }
+
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired,
+};
 
 export default Search;
