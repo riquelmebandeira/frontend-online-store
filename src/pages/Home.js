@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CartButton from '../components/CartButton';
 import CategoriesList from '../components/CategoriesList';
 import { getCategories } from '../services/api';
 
@@ -20,15 +20,21 @@ class Home extends Component {
   render() {
     const { storedCategories } = this.state;
     return (
-      <div>
-        <p data-testid="home-initial-message">
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </p>
-        <CartButton />
+      <main>
         <aside>
           { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
         </aside>
-      </div>
+        <article>
+          <section>
+            <p>Input de pesquisa</p>
+            <CartButton />
+          </section>
+          <p data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </p>
+          <section>chama função que renderiza produtos pesquisados</section>
+        </article>
+      </main>
     );
   }
 }
