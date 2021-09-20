@@ -1,24 +1,39 @@
 import React, { Component } from 'react';
 import CartButton from '../components/CartButton';
 import CategoriesList from '../components/CategoriesList';
-import { getCategories } from '../services/api';
+import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
+import Search from '../components/Search';
+import './Home.css';
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
       storedCategories: undefined,
+      query: '',
+      categoryId: '',
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   async componentDidMount() {
-    await getCategories().then((response) => this.setState({
-      storedCategories: response,
-    }));
+    await getCategories()
+      .then((response) => this.setState({ storedCategories: response }));
+  }
+
+  handleChange = ({ target }) => {
+    this.setState({ query: target.value });
+  }
+
+  async handleClick() {
+    console.log('clique');
+    const { query, categoryId } = this.state;
+    const products = await getProductsFromCategoryAndQuery(categoryId, query);
+    console.log(products);
   }
 
   render() {
-    const { storedCategories } = this.state;
+    const { storedCategories, query } = this.state;
     return (
       <main>
         <aside>
@@ -26,7 +41,11 @@ class Home extends Component {
         </aside>
         <article>
           <section>
-            <p>Input de pesquisa</p>
+            <Search
+              handleClick={ this.handleClick }
+              handleChange={ this.handleChange }
+              query={ query }
+            />
             <CartButton />
           </section>
           <p data-testid="home-initial-message">
@@ -40,4 +59,3 @@ class Home extends Component {
 }
 
 export default Home;
-
