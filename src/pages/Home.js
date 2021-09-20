@@ -26,7 +26,9 @@ class Home extends Component {
         </p>
         <aside>
           <ul>
-          { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
+            { storedCategories ? <CategoriesList
+              categories={ storedCategories }
+            /> : null }
           </ul>
         </aside>
         <CartButton />
