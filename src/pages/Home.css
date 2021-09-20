@@ -4,8 +4,8 @@ main {
 }
 
 aside {
-  width: 300px;
   border: solid 1px black;
+  width: 300px;
 }
 
 article {
