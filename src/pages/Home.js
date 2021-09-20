@@ -32,6 +32,7 @@ class Home extends Component {
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
+          <section>chama função que renderiza produtos pesquisados</section>
         </article>
       </main>
     );
@@ -39,3 +40,4 @@ class Home extends Component {
 }
 
 export default Home;
+
