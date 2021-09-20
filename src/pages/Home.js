@@ -20,19 +20,20 @@ class Home extends Component {
   render() {
     const { storedCategories } = this.state;
     return (
-      <div>
-        <p data-testid="home-initial-message">
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </p>
+      <main>
         <aside>
-          <ul>
-            { storedCategories ? <CategoriesList
-              categories={ storedCategories }
-            /> : null }
-          </ul>
+          { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
         </aside>
-        <CartButton />
-      </div>
+        <article>
+          <section>
+            <p>Input de pesquisa</p>
+            <CartButton />
+          </section>
+          <p data-testid="home-initial-message">
+            Digite algum termo de pesquisa ou escolha uma categoria.
+          </p>
+        </article>
+      </main>
     );
   }
 }
