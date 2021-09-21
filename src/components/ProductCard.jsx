@@ -8,16 +8,11 @@ class ProductCard extends React.Component {
 
     return (
       <>
-        { product.map(({
-          id,
-          title,
-          price,
-          thumbnail,
-        }) => (
-          <div key={ id } data-testid="product">
-            <h4>{ title }</h4>
-            <img src={ thumbnail } alt="Foto do produto" />
-            <p>{ price }</p>
+        { product.map((product2) => (
+          <div key={ product2.id } data-testid="product">
+            <h4>{ product2.title }</h4>
+            <img src={ product2.thumbnail } alt="Foto do produto" />
+            <p>{ product2.price }</p>
           </div>))}
       </>
     );

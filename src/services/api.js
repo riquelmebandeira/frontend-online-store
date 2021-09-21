@@ -8,10 +8,17 @@ export async function getCategories() {
 }
 
 // Chama API dos produtos por categoria/termo { Todos do grupo presentes }
-export async function getProductsFromCategoryAndQuery(categoryId = '', query = '') {
-  const productUrl = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}_ID&q=${query}`;
-  const fetchProduct = await fetch(productUrl);
-  const respProduct = await fetchProduct.json();
+export async function getProductsFromCategoryAndQuery(categoryId, query) {
+  let url = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}&q=${query}`;
+  if (query === '') {
+    url = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`;
+  }
+  if (categoryId === '') {
+    url = `https://api.mercadolibre.com/sites/MLB/search?q=${query}`;
+  }
 
-  return respProduct;
+  const response = await fetch(url);
+  const returnedObject = await response.json();
+
+  return returnedObject;
 }
