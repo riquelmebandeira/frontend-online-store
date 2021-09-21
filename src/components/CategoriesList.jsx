@@ -3,14 +3,20 @@ import PropTypes from 'prop-types';
 
 class CategoriesList extends React.Component {
   render() {
-    const { categories } = this.props;
+    const { categories, onClick } = this.props;
     return (
       <>
         {
           categories.map(({ id, name }) => (
             <li key={ id }>
               <label htmlFor={ id } data-testid="category">
-                <input type="radio" id={ id } name="test" />
+                <input
+                  type="radio"
+                  id={ id }
+                  name="category"
+                  onClick={ onClick }
+                  value={ id }
+                />
                 { name }
               </label>
             </li>

@@ -7,8 +7,8 @@ import Search from '../components/Search';
 import './Home.css';
 
 class Home extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       storedCategories: undefined,
       query: '',
@@ -16,6 +16,7 @@ class Home extends Component {
       searchResult: undefined,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
   }
 
   async componentDidMount() {
@@ -33,12 +34,23 @@ class Home extends Component {
     this.setState({ searchResult: products.results });
   }
 
+  async handleClick2({ target }) {
+    const { query } = this.state;
+    this.setState({ categoryId: target.id });
+    const categoryId = target.id;
+    const products = await getProductsFromCategoryAndQuery(categoryId, query);
+    this.setState({ searchResult: products.results });
+  }
+
   render() {
     const { storedCategories, query, searchResult } = this.state;
     return (
       <main>
         <aside>
-          { storedCategories ? <CategoriesList categories={ storedCategories } /> : null }
+          { storedCategories ? <CategoriesList
+            onClick={ this.handleClick2 }
+            categories={ storedCategories }
+          /> : null }
         </aside>
         <article>
           <section className="top-bar">
