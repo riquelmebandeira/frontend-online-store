@@ -1,40 +1,39 @@
-div[data-testid="product"] {
+[ data-testid = 'product' ] {
+  border: 2px solid rgb(57, 39, 127);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  height: 150px;
   justify-content: space-between;
   margin: 10px;
   padding: 10px;
   width: 150px;
-  height: 150px;
-  border: 2px solid rgb(57, 39, 127);
-  border-radius: 20px;
-} 
+}
 
 img {
-  max-width: 90%;
   max-height: 110px;
+  max-width: 90%;
   padding: 3px;
 }
 
 h4 {
-  text-align: center;
   font-size: 8px;
   margin: 0;
+  text-align: center;
 }
 
 
 p {
-  text-align: center;
   font-size: 12px;
-  margin: 0;
   font-weight: 700;
+  margin: 0;
+  text-align: center;
 }
 
 aside {
-  max-width: 200px;
   max-height: 350px;
-  overflow-y:scroll;
-
+  max-width: 200px;
+  overflow-y: scroll;
 }
 
 li {
