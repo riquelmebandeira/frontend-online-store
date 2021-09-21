@@ -17,7 +17,6 @@ class Home extends Component {
       searchResult: undefined,
     };
     this.handleClick = this.handleClick.bind(this);
-    this.handleClick2 = this.handleClick2.bind(this);
   }
 
   async componentDidMount() {
@@ -29,16 +28,17 @@ class Home extends Component {
     this.setState({ query: target.value });
   }
 
-  async handleClick() {
-    const { query, categoryId } = this.state;
-    const products = await getProductsFromCategoryAndQuery(categoryId, query);
-    this.setState({ searchResult: products.results });
-  }
-
-  async handleClick2({ target }) {
+  // target é o botão das categorias
+  async handleClick({ target }) {
     const { query } = this.state;
-    this.setState({ categoryId: target.id });
-    const categoryId = target.id;
+    if (target.id) { // checa se onde foi clicado tem um ID
+      const products = await getProductsFromCategoryAndQuery(target.id, query);
+      this.setState({
+        categoryId: target.id,
+        searchResult: products.results,
+      });
+    }
+    const { categoryId } = this.state;
     const products = await getProductsFromCategoryAndQuery(categoryId, query);
     this.setState({ searchResult: products.results });
   }
@@ -49,7 +49,7 @@ class Home extends Component {
       <main>
         <aside>
           { storedCategories ? <CategoriesList
-            onClick={ this.handleClick2 }
+            onClick={ this.handleClick }
             categories={ storedCategories }
           /> : null }
         </aside>
