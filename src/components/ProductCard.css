@@ -1,0 +1,43 @@
+div[data-testid="product"] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgb(57, 39, 127);
+  border-radius: 20px;
+} 
+
+img {
+  max-width: 90%;
+  max-height: 110px;
+  padding: 3px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 8px;
+  margin: 0;
+}
+
+
+p {
+  text-align: center;
+  font-size: 12px;
+  margin: 0;
+  font-weight: 700;
+}
+
+aside {
+  max-width: 200px;
+  max-height: 350px;
+  overflow-y:scroll;
+
+}
+
+li {
+  font-size: 8px;
+  list-style-type: none;
+}
