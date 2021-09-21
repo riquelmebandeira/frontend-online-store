@@ -5,7 +5,7 @@ class Search extends React.Component {
   render() {
     const { handleClick, handleChange, query } = this.props;
     return (
-      <div>
+      <div className="search-bar">
         <input
           onChange={ handleChange }
           type="text"
@@ -15,11 +15,12 @@ class Search extends React.Component {
           placeholder="Digite sua busca"
         />
         <button
+          className="search-button"
           type="button"
           data-testid="query-button"
           onClick={ handleClick }
         >
-          Pesquisar
+          Buscar
         </button>
       </div>
     );

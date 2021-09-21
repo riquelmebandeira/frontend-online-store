@@ -4,6 +4,7 @@ import ProductCard from '../components/ProductCard';
 import CategoriesList from '../components/CategoriesList';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 import Search from '../components/Search';
+import '../components/ProductCard.css';
 import './Home.css';
 
 class Home extends Component {
@@ -52,8 +53,8 @@ class Home extends Component {
             categories={ storedCategories }
           /> : null }
         </aside>
-        <article>
-          <section className="top-bar">
+        <article className="main-section">
+          <section className="searchBar-and-cartButton">
             <Search
               handleClick={ this.handleClick }
               handleChange={ this.handleChange }
@@ -64,7 +65,7 @@ class Home extends Component {
           <p data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </p>
-          <section>
+          <section className="products-list">
             { searchResult ? <ProductCard product={ searchResult } /> : null }
           </section>
         </article>

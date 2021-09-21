@@ -5,7 +5,7 @@ import { FaShoppingCart } from 'react-icons/fa'; // https://react-icons.github.i
 class CartButton extends Component {
   render() {
     return (
-      <div>
+      <div className="cart-button">
         <Link to="/shoppingcart" data-testid="shopping-cart-button">
           <FaShoppingCart />
         </Link>
