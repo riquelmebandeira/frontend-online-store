@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import AddButton from './AddButton';
 
-
 class ProductCard extends React.Component {
   render() {
     const { product } = this.props;
