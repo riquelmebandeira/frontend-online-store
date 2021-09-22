@@ -7,7 +7,7 @@ class ProductCard extends React.Component {
   render() {
     const { product } = this.props;
     if (product.length < 1) return <h3>Nenhum produto foi encontrado</h3>;
-    
+   
     return (
       <div>
         { product.map((productInfo) => (
@@ -26,7 +26,7 @@ class ProductCard extends React.Component {
               <img src={ productInfos.thumbnail } alt="Foto do produto" />
               <p>{ productInfos.price }</p>
             </Link>
-            <AddButton productInfo={ productInfo }/>
+            <AddButton productInfo={ productInfo } />
           </div>))}
       </div>
     );
