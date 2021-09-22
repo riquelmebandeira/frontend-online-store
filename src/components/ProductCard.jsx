@@ -9,16 +9,16 @@ class ProductCard extends React.Component {
 
     return (
       <div>
-        { product.map((productInfos) => (
+        { product.map((productInfo) => (
           <div
-            key={ productInfos.id }
+            key={ productInfo.id }
             data-testid="product"
-            id={ productInfos.id }
+            id={ productInfo.id }
           >
-            <h4>{ productInfos.title }</h4>
-            <img src={ productInfos.thumbnail } alt="Foto do produto" />
-            <p>{ productInfos.price }</p>
-            <AddButton />
+            <h4>{ productInfo.title }</h4>
+            <img src={ productInfo.thumbnail } alt="Foto do produto" />
+            <p>{ productInfo.price }</p>
+            <AddButton productInfo={ productInfo } />
           </div>))}
       </div>
     );

@@ -1,0 +1,11 @@
+.cart-item {
+  display: flex;
+}
+
+.cart-item p {
+  margin: auto;
+}
+
+.cart-item span {
+  margin: auto;
+}
