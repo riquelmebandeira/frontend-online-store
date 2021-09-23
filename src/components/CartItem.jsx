@@ -7,8 +7,8 @@ class CartItem extends React.Component {
   render() {
     const { removeItem, id, thumbnail, title, price, teste } = this.props;
     return (
-      <div className="cart-item" id={ id }>
-        <button type="button" onClick={ removeItem }>Remover</button>
+      <div className="cart-item">
+        <button id={ id } type="button" onClick={ removeItem }>Remover</button>
         <img src={ thumbnail } alt="Foto do produto" />
         <p data-testid="shopping-cart-product-name">
           { title }
