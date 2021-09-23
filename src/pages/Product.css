@@ -1,0 +1,146 @@
+.product-detail-infos {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-detail-buttons {
+  align-items: center;
+  display: flex;
+}
+
+.cart-button {
+  margin: 0 5px;
+}
+
+.product-price-title-buttons {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+[ data-testid = "product-detail-name" ] {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.product-detail-price {
+  font-size: 30px;
+  font-weight: 700;
+  margin-left: 10px;
+
+}
+
+.imagem-e-especif-tecnicas {
+  align-items: flex-start;
+  display: flex;
+
+}
+
+.details-image {
+  border: 1px solid black;
+  display: block;
+  height: auto;
+  margin: 10px;
+  min-width:200px;
+  min-height:200px;
+  padding: 15px;
+  width: auto;
+}
+
+.especif-tecnicas {
+  border: 1px solid black;
+  font-size: 20px;
+  margin: 10px;
+  min-height:200px;
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.tecninal-li {
+  font-size: 15px;
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.button-div {
+  margin: 5px;
+  margin-left: 50px;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 200ms;
+}
+
+.evaluation-session {
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.email-and-rate {
+  display: flex;
+}
+
+.rating {
+  margin-left: 10px;
+}
+
+textarea {
+  margin-top: 10px;
+}
+
+form {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.radio-button {
+  height: 0;
+  visibility: hidden;
+  width: 0;
+}
+
+.old-evaluation-session {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.email-and-rating-history {
+  display: flex;
+  margin-top: 10px;
+}
+
+.teste {
+  align-items: flex-start;
+  border-top: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  margin-bottom: 20px;
+  width: 97%;
+}
+
+.old-rating {
+  margin-left: 40px;
+}
+
+.old-comment {
+  margin-top: 15px;
+}

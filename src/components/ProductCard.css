@@ -1,42 +1,48 @@
 [ data-testid = 'product' ] {
   border: 2px solid rgb(57, 39, 127);
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
   height: 150px;
   justify-content: space-between;
   margin: 10px;
+  margin-bottom: 2px;
+  margin-top: 20px;
   padding: 10px;
   width: 150px;
+}
+
+.product-link {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  text-decoration: none;
 }
 
 img {
   max-height: 110px;
   max-width: 90%;
+  height: auto;
   padding: 3px;
+  width: auto;
 }
 
 h4 {
+  color: black;
   font-size: 8px;
   margin: 0;
   text-align: center;
 }
 
-
 p {
+  color: black;
   font-size: 12px;
   font-weight: 700;
   margin: 0;
   text-align: center;
 }
 
-aside {
-  max-height: 350px;
-  max-width: 200px;
-  overflow-y: scroll;
-}
-
-li {
-  font-size: 8px;
-  list-style-type: none;
+.addtocart-button {
+  margin: 0;
+  display: flex;
 }

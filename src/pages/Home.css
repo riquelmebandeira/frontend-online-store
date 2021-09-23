@@ -14,6 +14,27 @@ aside {
   padding: 10px;
 }
 
+.aside-li {
+  font-size: 8px;
+  list-style-type: none;
+}
+
+.aside-label {
+  align-items: center;
+  display: flex;
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+.category-input{
+  margin: 0;
+}
+
+.category-li {
+  font-size: 8px;
+  list-style-type: none;
+}
+
 .main-section {
   align-items: center;
   display: flex;
@@ -46,11 +67,14 @@ aside {
 }
 
 .search-button {
+  align-items: center;
+  align-content: center;
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  margin: 0;
   margin-right: 5px;
-  place-items: center;
 }
 
 .cart-button {
@@ -67,4 +91,10 @@ aside {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.product-and-addtocart-button {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
