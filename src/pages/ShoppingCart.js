@@ -27,7 +27,7 @@ class ShoppingCart extends Component {
   }
 
   cartList = async () => {
-    const products = JSON.parse(localStorage.getItem('itemID') || []);
+    const products = JSON.parse(localStorage.getItem('itemID')) || [];
     this.setState({
       products,
     });
@@ -50,7 +50,7 @@ class ShoppingCart extends Component {
 
     if (products.length < 1) {
       return (
-        <p>{ emptyCart }</p>
+        <p data-testid="shopping-cart-empty-message">{ emptyCart }</p>
       );
     }
     return (

@@ -9,13 +9,13 @@ import CartButton from '../components/CartButton';
 class Product extends React.Component {
   constructor(props) {
     super(props);
-    const { location: { state: { productInfos } } } = this.props;
-    document.title = productInfos.title;
+    const { location: { state: { productInfo } } } = this.props;
+    document.title = productInfo.title;
   }
 
   render() {
-    const { location: { state: { productInfos } } } = this.props;
-    const { title, thumbnail, price, attributes } = productInfos;
+    const { location: { state: { productInfo } } } = this.props;
+    const { title, thumbnail, price, attributes } = productInfo;
     return (
       <main>
         <section>

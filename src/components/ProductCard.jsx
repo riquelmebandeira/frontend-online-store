@@ -18,12 +18,12 @@ class ProductCard extends React.Component {
             <Link
               data-testid="product-detail-link "
               to={ {
-                pathname: `/product/${productInfos.id}`,
-                state: { productInfos } } }
+                pathname: `/product/${productInfo.id}`,
+                state: { productInfo } } }
             >
-              <h4>{ productInfos.title }</h4>
-              <img src={ productInfos.thumbnail } alt="Foto do produto" />
-              <p>{ productInfos.price }</p>
+              <h4>{ productInfo.title }</h4>
+              <img src={ productInfo.thumbnail } alt="Foto do produto" />
+              <p>{ productInfo.price }</p>
             </Link>
             <AddButton productInfo={ productInfo } />
           </div>))}
