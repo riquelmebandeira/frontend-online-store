@@ -26,7 +26,7 @@ aside {
   margin: 5px 0;
 }
 
-.category-input{
+.category-input {
   margin: 0;
 }
 
@@ -67,8 +67,8 @@ aside {
 }
 
 .search-button {
-  align-items: center;
   align-content: center;
+  align-items: center;
   background-color: white;
   border-radius: 5px;
   cursor: pointer;

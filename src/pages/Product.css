@@ -20,7 +20,7 @@
   margin: 10px;
 }
 
-[ data-testid = "product-detail-name" ] {
+[ data-testid = 'product-detail-name' ] {
   font-size: 20px;
   font-weight: 300;
 }
@@ -43,19 +43,19 @@
   display: block;
   height: auto;
   margin: 10px;
-  min-width:200px;
-  min-height:200px;
+  min-height: 200px;
+  min-width: 200px;
   padding: 15px;
   width: auto;
 }
 
 .especif-tecnicas {
   border: 1px solid black;
+  flex-grow: 1;
   font-size: 20px;
   margin: 10px;
-  min-height:200px;
+  min-height: 200px;
   padding: 15px;
-  flex-grow: 1;
 }
 
 .h3 {

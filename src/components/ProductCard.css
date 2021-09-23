@@ -20,9 +20,9 @@
 }
 
 img {
+  height: auto;
   max-height: 110px;
   max-width: 90%;
-  height: auto;
   padding: 3px;
   width: auto;
 }
@@ -43,6 +43,6 @@ p {
 }
 
 .addtocart-button {
-  margin: 0;
   display: flex;
+  margin: 0;
 }
