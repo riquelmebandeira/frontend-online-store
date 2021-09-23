@@ -34,6 +34,7 @@ class AmountControl extends React.Component {
       <div className="amount-control">
         <button
           type="button"
+          className="amount-button"
           data-testid="product-decrease-quantity"
           onClick={ this.decreaseQty }
         >
@@ -42,6 +43,7 @@ class AmountControl extends React.Component {
         <span data-testid="shopping-cart-product-quantity">{ productAmount }</span>
         <button
           type="button"
+          className="amount-button"
           data-testid="product-increase-quantity"
           onClick={ this.increaseQty }
         >
