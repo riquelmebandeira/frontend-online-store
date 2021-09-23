@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { TiArrowBack } from 'react-icons/ti';
 import CartItem from '../components/CartItem';
 import './ShoppingCart.css';
 
@@ -56,6 +58,7 @@ class ShoppingCart extends Component {
     return (
       <main>
         <section>
+          <Link to="/"><TiArrowBack /></Link>
           { products.map((product) => (
             <CartItem
               key={ product.id }
