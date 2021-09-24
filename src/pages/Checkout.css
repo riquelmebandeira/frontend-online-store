@@ -1,0 +1,91 @@
+.checkout {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+.total-price {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.form {
+  background-color: rgb(204, 243, 166);
+  border: 1px solid black;
+  margin: 10px;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+.form h3 {
+  margin-top: 0px;
+}
+
+.form input {
+  flex-grow: 1;
+  margin: 4px;
+}
+
+.form select {
+  flex-grow: 1;
+  margin: 4px;
+}
+
+.form-linha-1 {
+  display: flex;
+}
+
+.form-linha-2 {
+  display: flex;
+}
+
+.cep-input {
+  max-width: 180px;
+}
+
+.form-linha-3 {
+  display: flex;
+}
+
+.forma-de-pagamento {
+  background-color: rgb(204, 243, 166);
+  border: 1px solid black;
+  margin: 10px;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+.forma-de-pagamento h3 {
+  margin-top: 0px;
+}
+
+.metodo-pagamento {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.p-boleto {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 0px;
+}
+
+.p-outros {
+  font-size: 15px;
+  font-weight: 700;
+  margin-left: 70px;
+}
+
+.input-payment {
+  align-items: center;
+  display: flex;
+  margin-left: 10px;
+}
+
+.checkout-button {
+  height: 45px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: 110px;
+}

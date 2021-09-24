@@ -1,10 +1,12 @@
 main {
+  background-color: rgb(223, 223, 223);
   display: flex;
   flex-direction: row;
   margin-top: 20px;
 }
 
 aside {
+  background-color: rgb(255, 255, 255);
   border: 2px solid rgb(57, 39, 127);
   border-radius: 20px;
   margin-left: 20px;
@@ -44,6 +46,7 @@ aside {
 
 .searchBar-and-cartButton {
   display: flex;
+  align-items: center
 }
 
 .search-bar {
@@ -52,6 +55,7 @@ aside {
   border: solid 2px seagreen;
   border-radius: 10px;
   display: flex;
+  height: 30px;
   justify-content: space-around;
   min-width: 300px;
 }
@@ -60,7 +64,7 @@ aside {
   background-color: rgb(221, 248, 233);
   border: 0;
   border-radius: 10px;
-  height: 30px;
+  height: 25px;
   margin: 0 10px;
   outline: rgb(221, 248, 233);
   width: 300px;

@@ -7,7 +7,7 @@ class CartButton extends Component {
     return (
       <div className="cart-button">
         <Link to="/shoppingcart" data-testid="shopping-cart-button">
-          <FaShoppingCart />
+          <FaShoppingCart size="1.5em" />
         </Link>
       </div>
     );

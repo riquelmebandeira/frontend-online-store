@@ -1,7 +1,7 @@
 .product-detail-infos {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin-top: 5px;
 }
 
 .product-detail-buttons {
@@ -39,6 +39,7 @@
 }
 
 .details-image {
+  background-color: rgb(223, 223, 223);
   border: 1px solid black;
   display: block;
   height: auto;
@@ -50,6 +51,7 @@
 }
 
 .especif-tecnicas {
+  background-color: rgb(223, 223, 223);
   border: 1px solid black;
   flex-grow: 1;
   font-size: 20px;
@@ -84,6 +86,7 @@ h1 {
 }
 
 .evaluation-session {
+  background-color: rgb(223, 223, 223);
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
@@ -118,6 +121,7 @@ button {
 }
 
 .old-evaluation-session {
+  background-color: rgb(223, 223, 223);
   border: 1px solid black;
   margin: 10px;
 }

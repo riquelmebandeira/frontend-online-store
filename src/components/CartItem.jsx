@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TiDeleteOutline } from 'react-icons/ti';
 import AmountControl from './AmountControl';
 import '../pages/ShoppingCart.css';
 
@@ -8,14 +9,12 @@ class CartItem extends React.Component {
     const { removeItem, id, thumbnail, title, price, teste } = this.props;
     return (
       <div className="cart-item">
-        <button
+        <TiDeleteOutline
+          size="3em"
           id={ id }
           className="remove-button"
-          type="button"
           onClick={ removeItem }
-        >
-          Remover
-        </button>
+        />
         <img src={ thumbnail } alt="Foto do produto" />
         <p data-testid="shopping-cart-product-name">
           { title }
