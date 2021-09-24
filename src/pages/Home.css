@@ -6,7 +6,7 @@ main {
 }
 
 aside {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   border: 2px solid rgb(57, 39, 127);
   border-radius: 20px;
   margin-left: 20px;
@@ -45,8 +45,8 @@ aside {
 }
 
 .searchBar-and-cartButton {
+  align-items: center;
   display: flex;
-  align-items: center
 }
 
 .search-bar {

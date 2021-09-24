@@ -1,5 +1,5 @@
 .main-shopping-cart {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
@@ -33,7 +33,7 @@
   border: 1px solid black;
   border-radius: 20px;
   margin: 5px;
-  padding: 0px;
+  padding: 0;
   width: 100px;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .finalizar-button {
-  font-size: 20px;
   border-radius: 20px;
+  font-size: 20px;
   margin-bottom: 30px;
 }

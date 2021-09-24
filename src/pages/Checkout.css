@@ -1,5 +1,5 @@
 .checkout {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   display: flex;
   flex-direction: column;
 }
@@ -18,7 +18,7 @@
 }
 
 .form h3 {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .form input {
@@ -56,7 +56,7 @@
 }
 
 .forma-de-pagamento h3 {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .metodo-pagamento {
@@ -68,7 +68,7 @@
 .p-boleto {
   font-size: 15px;
   font-weight: 700;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .p-outros {
