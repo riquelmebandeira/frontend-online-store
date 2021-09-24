@@ -13,7 +13,7 @@ class CartItem extends React.Component {
           size="3em"
           id={ id }
           className="remove-button"
-          onClick={ removeItem }
+          onClick={ () => removeItem(id, price) }
         />
         <img src={ thumbnail } alt="Foto do produto" />
         <p data-testid="shopping-cart-product-name">

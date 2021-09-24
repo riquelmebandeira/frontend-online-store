@@ -43,8 +43,9 @@ class ShoppingCart extends Component {
     this.setState({ total: 0 });
   }
 
-  removeItem({ target }) {
-    const productId = target.id;
+  removeItem(id, price) {
+    const productId = id;
+    this.calculatePrice('-', price);
     const { products } = this.state;
     const productIndex = products.findIndex((product) => product.id === productId);
     products.splice(productIndex, 1);
@@ -59,9 +60,9 @@ class ShoppingCart extends Component {
       return null;
     }
     products.forEach((product) => {
-      const { total } = this.state;
-      const sumTotal = total + product.price;
-      this.setState({ total: sumTotal });
+      this.setState((prevState) => ({
+        total: `${(parseFloat(prevState.total) + product.price).toFixed(2)}`,
+      }));
     });
   }
 
