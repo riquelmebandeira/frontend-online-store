@@ -19,9 +19,11 @@ class ShoppingCart extends Component {
     this.state = {
       emptyCart: 'Seu carrinho está vazio', // mensagem mostrada quando carrinho está vazio
       products: [],
+      total: 0,
     };
 
     this.removeItem = this.removeItem.bind(this);
+    this.totalPrice = this.totalPrice.bind(this);
   }
 
   componentDidMount() {
@@ -29,17 +31,21 @@ class ShoppingCart extends Component {
   }
 
   cartList = async () => {
-    const products = JSON.parse(localStorage.getItem('itemID')) || [];
+    const products = await JSON.parse(localStorage.getItem('itemID')) || [];
     this.setState({
       products,
     });
+    this.totalPrice(products);
   };
+
+  handleClick = () => {
+    this.setState({ total: 0 });
+  }
 
   removeItem({ target }) {
     const productId = target.id;
     const { products } = this.state;
     const productIndex = products.findIndex((product) => product.id === productId);
-    console.log(productIndex);
     products.splice(productIndex, 1);
     this.setState({
       products,
@@ -47,16 +53,33 @@ class ShoppingCart extends Component {
     localStorage.setItem('itemID', JSON.stringify(products));
   }
 
-  render() {
-    const { emptyCart, products } = this.state;
+  totalPrice(products) {
+    if (products.length === 0) {
+      return null;
+    }
+    products.forEach((product) => {
+      const { total } = this.state;
+      const sumTotal = total + product.price;
+      this.setState({ total: sumTotal });
+    });
+  }
 
+  render() {
+    const { emptyCart, products, total } = this.state;
     if (products.length < 1) {
       return (
-        <p data-testid="shopping-cart-empty-message">{ emptyCart }</p>
+        <div>
+          <Link to="/"><TiArrowBack size="2em" /></Link>
+          <p data-testid="shopping-cart-empty-message">{ emptyCart }</p>
+        </div>
       );
     }
     return (
-      <main>
+      <main className="main-shopping-cart">
+        <div className="header">
+          <h3>Seu carrinho de compras:</h3>
+          <Link to="/"><TiArrowBack size="2em" /></Link>
+        </div>
         <section>
           <Link to="/"><TiArrowBack /></Link>
           { products.map((product) => (
@@ -68,7 +91,19 @@ class ShoppingCart extends Component {
               title={ product.title }
               price={ product.price }
             />
-          )) }
+          ))}
+        </section>
+        <section className="total-price">
+          { `Valor Total da Compra: R$ ${total}` }
+          <Link to="/checkout">
+            <button
+              data-testid="checkout-products"
+              className="finalizar-button"
+              type="button"
+            >
+              Finalizar Compra
+            </button>
+          </Link>
         </section>
       </main>
     );

@@ -1,5 +1,23 @@
+.main-shopping-cart {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 40px;
+}
+
+.header h3 {
+  margin: 0;
+}
+
 .cart-item {
   align-items: center;
+  background-color: rgb(223, 223, 223);
   border: 2px solid black;
   border-radius: 30px;
   display: flex;
@@ -8,13 +26,15 @@
 }
 
 .remove-button {
-  height: 30px;
   margin: 10px;
 }
 
 .cart-item img {
+  border: 1px solid black;
+  border-radius: 20px;
   margin: 5px;
-  width: 90px;
+  padding: 0;
+  width: 100px;
 }
 
 .cart-item p {
@@ -39,3 +59,15 @@
   margin: auto;
 }
 
+.total-price {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+.finalizar-button {
+  border-radius: 20px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}

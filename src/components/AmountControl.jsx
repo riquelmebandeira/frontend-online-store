@@ -1,4 +1,5 @@
 import React from 'react';
+import { TiChevronLeftOutline, TiChevronRightOutline } from 'react-icons/ti';
 import './AmountControl.css';
 
 class AmountControl extends React.Component {
@@ -32,23 +33,19 @@ class AmountControl extends React.Component {
     const { productAmount } = this.state;
     return (
       <div className="amount-control">
-        <button
-          type="button"
+        <TiChevronLeftOutline
+          size="2em"
           className="amount-button"
           data-testid="product-decrease-quantity"
           onClick={ this.decreaseQty }
-        >
-          -
-        </button>
+        />
         <span data-testid="shopping-cart-product-quantity">{ productAmount }</span>
-        <button
-          type="button"
+        <TiChevronRightOutline
+          size="2em"
           className="amount-button"
           data-testid="product-increase-quantity"
           onClick={ this.increaseQty }
-        >
-          +
-        </button>
+        />
       </div>
     );
   }

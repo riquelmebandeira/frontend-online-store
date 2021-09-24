@@ -23,7 +23,7 @@ class StarRating extends Component {
                 />
                 <FaStar
                   className="star"
-                  color={ ratingValue <= rating ? '#ffc107' : '#e4e5e9' }
+                  color={ ratingValue <= rating ? '#ffc107' : '#64605F' }
                   size={ 30 }
                 />
               </label>

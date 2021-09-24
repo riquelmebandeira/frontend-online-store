@@ -23,7 +23,7 @@ class Product extends React.Component {
           <p data-testid="product-detail-name">{ title }</p>
           <p className="product-detail-price">{ `R$ ${price}` }</p>
           <div className="product-detail-buttons">
-            <Link to="/"><TiArrowBack /></Link>
+            <Link to="/"><TiArrowBack size="2em" /></Link>
             <CartButton />
           </div>
         </div>
