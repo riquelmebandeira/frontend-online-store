@@ -23,7 +23,8 @@ class ShoppingCart extends Component {
     };
 
     this.removeItem = this.removeItem.bind(this);
-    this.totalPrice = this.totalPrice.bind(this);
+    this.initialPrice = this.initialPrice.bind(this);
+    this.calculatePrice = this.calculatePrice.bind(this);
   }
 
   componentDidMount() {
@@ -35,7 +36,7 @@ class ShoppingCart extends Component {
     this.setState({
       products,
     });
-    this.totalPrice(products);
+    this.initialPrice(products);
   };
 
   handleClick = () => {
@@ -53,7 +54,7 @@ class ShoppingCart extends Component {
     localStorage.setItem('itemID', JSON.stringify(products));
   }
 
-  totalPrice(products) {
+  initialPrice(products) {
     if (products.length === 0) {
       return null;
     }
@@ -62,6 +63,20 @@ class ShoppingCart extends Component {
       const sumTotal = total + product.price;
       this.setState({ total: sumTotal });
     });
+  }
+
+  calculatePrice(operator, price) {
+    const { total } = this.state;
+    if (operator === '+') {
+      return this.setState((prevState) => ({
+        total: `${(parseFloat(prevState.total) + price).toFixed(2)}`,
+      }));
+    }
+    if (operator === '-' && price <= total) {
+      this.setState((prevState) => ({
+        total: `${(parseFloat(prevState.total) - price).toFixed(2)}`,
+      }));
+    }
   }
 
   render() {
@@ -90,6 +105,7 @@ class ShoppingCart extends Component {
               thumbnail={ product.thumbnail }
               title={ product.title }
               price={ product.price }
+              calculatePrice={ this.calculatePrice }
             />
           ))}
         </section>
