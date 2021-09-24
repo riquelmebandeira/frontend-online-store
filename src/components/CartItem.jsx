@@ -6,20 +6,20 @@ import '../pages/ShoppingCart.css';
 
 class CartItem extends React.Component {
   render() {
-    const { removeItem, id, thumbnail, title, price, teste } = this.props;
+    const { removeItem, id, thumbnail, title, price, calculatePrice } = this.props;
     return (
       <div className="cart-item">
         <TiDeleteOutline
           size="3em"
           id={ id }
           className="remove-button"
-          onClick={ removeItem }
+          onClick={ () => removeItem(id, price) }
         />
         <img src={ thumbnail } alt="Foto do produto" />
         <p data-testid="shopping-cart-product-name">
           { title }
         </p>
-        <AmountControl teste={ teste } />
+        <AmountControl calculatePrice={ calculatePrice } price={ price } />
         <h3>
           { price }
         </h3>
@@ -34,7 +34,7 @@ CartItem.propTypes = {
   thumbnail: PropTypes.string,
   title: PropTypes.string,
   price: PropTypes.number,
-  teste: PropTypes.func,
+  calculatePrice: PropTypes.func,
 }.isRequired;
 
 export default CartItem;

@@ -23,7 +23,8 @@ class ShoppingCart extends Component {
     };
 
     this.removeItem = this.removeItem.bind(this);
-    this.totalPrice = this.totalPrice.bind(this);
+    this.initialPrice = this.initialPrice.bind(this);
+    this.calculatePrice = this.calculatePrice.bind(this);
   }
 
   componentDidMount() {
@@ -35,15 +36,16 @@ class ShoppingCart extends Component {
     this.setState({
       products,
     });
-    this.totalPrice(products);
+    this.initialPrice(products);
   };
 
   handleClick = () => {
     this.setState({ total: 0 });
   }
 
-  removeItem({ target }) {
-    const productId = target.id;
+  removeItem(id, price) {
+    const productId = id;
+    this.calculatePrice('-', price);
     const { products } = this.state;
     const productIndex = products.findIndex((product) => product.id === productId);
     products.splice(productIndex, 1);
@@ -53,15 +55,29 @@ class ShoppingCart extends Component {
     localStorage.setItem('itemID', JSON.stringify(products));
   }
 
-  totalPrice(products) {
+  initialPrice(products) {
     if (products.length === 0) {
       return null;
     }
     products.forEach((product) => {
-      const { total } = this.state;
-      const sumTotal = total + product.price;
-      this.setState({ total: sumTotal });
+      this.setState((prevState) => ({
+        total: `${(parseFloat(prevState.total) + product.price).toFixed(2)}`,
+      }));
     });
+  }
+
+  calculatePrice(operator, price) {
+    const { total } = this.state;
+    if (operator === '+') {
+      return this.setState((prevState) => ({
+        total: `${(parseFloat(prevState.total) + price).toFixed(2)}`,
+      }));
+    }
+    if (operator === '-' && price <= total) {
+      this.setState((prevState) => ({
+        total: `${(parseFloat(prevState.total) - price).toFixed(2)}`,
+      }));
+    }
   }
 
   render() {
@@ -90,6 +106,7 @@ class ShoppingCart extends Component {
               thumbnail={ product.thumbnail }
               title={ product.title }
               price={ product.price }
+              calculatePrice={ this.calculatePrice }
             />
           ))}
         </section>
