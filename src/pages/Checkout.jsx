@@ -29,10 +29,6 @@ class Checkout extends Component {
     this.totalPrice(products);
   };
 
-  handleClick = () => {
-    this.setState({ total: 0 });
-  }
-
   removeItem({ target }) {
     const productId = target.id;
     const { products } = this.state;
@@ -152,7 +148,6 @@ class Checkout extends Component {
           className="checkout-button"
           data-testid="checkout-products"
           type="button"
-          onClick={ this.handleClick }
         >
           Comprar
         </button>
